@@ -2,25 +2,12 @@ function threeSum(arr, target) {
 	let brr = [];
 	arr.sort(function (a, b) { return a - b });
 
-	for(let i =0;i<=arr.length-2;i++){
-		let j =i+1;
-		let k = j +1;
-
-		while(k < arr.length){
-			let sum = arr[i]+arr[j]+arr[k];
-			brr.push(sum);
-			k++;
-		}
-		if(k === arr.length-1 &&  j < k){
-			while(j < k){
-				let sum = arr[i] + arr[j] +arr[k];
+	for(let i =0;i<arr.length;i++){
+		for(let j = i+1;j<arr.length;j++){
+			for(let k = j+1;k<arr.length;k++){
+				let sum = arr[i]+arr[j]+arr[k];
 				brr.push(sum);
 			}
-		}
-
-		if(j == arr.length-1 && k == arr.length-1){
-			let sum = arr[i]+arr[j]+arr[k];
-			brr.push(sum);
 		}
 	}
 	let val = 0;
